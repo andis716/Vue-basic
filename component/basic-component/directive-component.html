@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../lib/vue.min.js"></script>
+</head>
+<body>
+
+  <!-- ? Contoh penggunaan Directive component -->
+
+  <div id="app">
+    <book
+      v-for="book in books"
+      :key="book.id"
+      :book="book">
+    </book>
+  </div>
+
+<script>
+  var BookComponent = {
+    data () {
+      return {
+        classCard: 'card'
+      }
+    },
+    props: [ 'book' ],
+    template : `
+    <div :class="classCard">
+    <h3>{{ book.title }}</h3>
+    <img :src="book.image" style="width:20%">
+    <p v-html="book.description"></p>
+    </div>
+    `
+  }
+
+  var vm = new Vue({
+  el: '#app',
+  components: {
+    'book': BookComponent,
+    },
+  data: {
+    books : [
+      {
+        id: 99,
+        title: 'C++ High Performance',
+        description: 'Write code that scales across CPU registers, multi-core , and machine clusters',
+        authors: 'Viktor Sehr, Björn Andrist',
+        publish_year: 2018,
+        price: 100000,
+        image: 'html.png'
+      },
+      {
+        id: 100,
+        title: 'Mastering Linux Security and Hardening',
+        description: 'A comprehensive guide to mastering the art of preventing your Linux system from getting compromised',
+        authors: 'Donald A. Tevault',
+        publish_year: 2018,
+        price: 125000,
+        image: 'css.png'
+      },
+      {
+        id: 101,
+        title: 'Mastering PostgreSQL 10',
+        description: 'Master the capabilities of PostgreSQL 10 to efficiently manage and maintain your database',
+        authors: 'Hans-Jürgen Schönig',
+        publish_year: 2016,
+        price: 90000,
+        image: 'html.png'
+      },
+      {
+        id: 102,
+        title: 'Python Programming Blueprints',
+        description: 'How to build useful, real-world applicationsin the Python programming language', 
+        authors: 'Daniel Furtado, Marcus Pennington',
+        publish_year: 2017,
+        price: 75000,
+        image: 'css.png'
+      },
+    ]
+  }
+})
+</script>
+  </body>

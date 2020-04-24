@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="lib/vue.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h1> upper: {{ message | upper }} </h1>
+    <h1> reverse: {{ message | reverse }} </h1>
+    <h1> upper & reverse: {{ message | upper | reverse }} </h1>
+  </div>
+
+
+  <script type="text/javascript">
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello',
+      },
+        filters: {
+        upper (text) {
+          return text.toUpperCase()
+        },
+          reverse (text) {
+          return text.split('').reverse().join('')
+          }
+      }
+    })
+  </script>
+  
+</body>
+</html>

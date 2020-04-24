@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../lib/vue.min.js"></script>
+</head>
+<body>
+
+  <!-- ? contoh penggunaan v-bind -->
+    <div id="app">
+      <img v-bind:src="imageSrc">
+    </div>
+
+
+    <script type="text/javascript">
+    var vm = new Vue({
+      el: '#app',
+      data: {
+            imageSrc: '../html.png',
+          }
+        })
+      setTimeout(()=>{
+      vm.imageSrc = '../css.png'
+    },3000);
+    </script>
+</body>
+</html>

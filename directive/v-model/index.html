@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../lib/vue.min.js"></script>
+</head>
+<body>
+
+  <!-- ? contoh penggunaan v-model -->
+  <div id="app">
+    <h3>input dengan menggunakan v-bind dan v-on</h3>
+    <form>
+      <!-- ? input dengan menggunakan v-bind dan v-on -->
+        <input type="text" name="title" v-bind:value="title" v-on:input="title = $event.target.value" />
+        {{ title }}
+    </form>
+    </div>
+    <hr><br>
+    <div id="app2">
+      <h3>input dengan menggunakan v-model</h3>
+      <form>
+        <!-- ? input dengan menggunakan v-model -->
+        <input type="text" name="title" v-model="title" placeholder="masukkan judul">
+          {{ title }}
+          <br><br>
+        <textarea name="description" v-model="description" placeholder="masukkan deskripsi"></textarea>
+        {{ description }}
+      </form>
+    </div>
+  
+    <script>
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        title: "Mastering "
+        },
+    })
+
+    var vm = new Vue({
+      el: '#app2',
+      data: {
+        title: "",
+        description: ""
+      },
+    })
+
+
+    </script>
+</body>
+</html>

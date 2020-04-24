@@ -1,0 +1,8 @@
+                  # Component #
+
+Component merupakan sub class/objek dari Vue yang bisa kita buat untuk berbagai tujuan misalnya
+memecah kompleksitas kode, reusabilitas kode, dan modularitas kode. Setiap component memiliki lifecycle
+yang sama dengan objek Vuenya.
+Untuk membuat sebuah component baru, cukup dengan kode menjalankan method
+Vue.component('nama-component', { /* options */ }).
+

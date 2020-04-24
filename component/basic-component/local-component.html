@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../lib/vue.min.js"></script>
+</head>
+<body>
+
+  <!-- ? Contoh penggunaan local component -->
+
+  <div id="app">
+    <h1>Objek Vue 1</h1>
+      <component-a></component-a>
+      <component-b></component-b>
+  </div>
+
+
+
+    <script>
+    var ComponentA = {
+      template: `<p>Component A</p>`
+    }
+    var ComponentB = {
+      template: `<p>Component B</p>`
+    }
+    var ComponentC = {
+      template: `<p>Component C</p>`
+    }
+    // ? Register component
+    new Vue({
+      el: '#app',
+      components: {
+        'component-a': ComponentA,
+        'component-b': ComponentB,
+        'component-c': ComponentC
+      }
+    })
+    </script>
+  </body>

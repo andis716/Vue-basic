@@ -1,0 +1,97 @@
+                            # Directive Pada Vue Js #
+
+
+v-html 
+Merupakan directive yang digunakan untuk menampilkan data berupa kode HTML
+Contoh :
+  <p v-html="message"></p>
+
+v-once
+Merupakan directive yang digunakan agar nilai variabel pada template tidak bisa diubah-ubah lagi.
+Contoh :
+  <p v-once>{{ message }}</p>
+
+v-text
+Merupakan directive yang digunakan untuk menampilkan string biasa, fungsinya sama dengan mustache
+atau double kurung kurawal.
+Contoh :
+  <p v-text="message"></p>
+  <!-- sama dengan -->
+  <p>{{ message }}</p>
+
+v-show
+Merupakan directive yang digunakan untuk menampilkan atau menyembunyikan suatu elemen DOM.
+Directive ini membutuhkan variabel bertipe boolean.
+Contoh : 
+  <p v-show="displayMessage">{{ message }}</p>
+v-show tidak mengandung element templete 
+
+v-if v-else dan v-else-if 
+Hampir sama dengan v-show, v-if merupakan directive yang digunakan untuk merender atau tidak merender
+suatu elemen DOM (conditional rendering).
+Contoh :
+  <h1 v-if="renderTitle">{{ title }}</h1>
+
+v-on
+Merupakan directive yang berperan sebagai sebuah event listener pada elemen HTML/komponen Vue.
+Directive ini bertugas memantau aktifitas (aksi) yang dilakukan terhadap suatu elemen HTML/komponen Vue.
+Contoh penggunaan.
+  Contoh :
+  <button v-on:click="info('halo')">
+    Informasi
+  </button>
+
+  Selain directive v-on:click ada beberapa directive lain yang bisa kita gunakan, diantaranya:
+    v-on:mouseover ketika mouse berada di area elemen.
+    v-on:mouseenter ketika mouse masuk ke area elemen.
+    v-on:mouseout ketika mouse keluar dari area elemen.
+    v-on:mousedown sama dengan v-on:click.
+    v-on:keyup ketika keyboard up pada elemen (biasanya digunakan pada elemen input).
+    v-on:keydown ketika keyboard down pada elemen (biasanya digunakan pada elemen input).
+    v-on:submit ketika form di submit.
+
+  Demikian juga untuk modifiernya juga bermacam macam.
+    .enter modifier ini akan bereaksi ketika keyboard Enter ditekan.
+    .tab modifier ini akan bereaksi ketika keyboard Tab ditekan.
+    .delete modifier ini akan bereaksi ketika keyboard Delete atau Backspace ditekan.
+    .esc modifier ini akan bereaksi ketika keyboard Escape ditekan.
+    .space modifier ini akan bereaksi ketika keyboard Spasi ditekan.
+    .native modifier ini akan listen native event pada elemen root dari komponen.
+    .ctrl modifier ini akan bereaksi ketika keyboard Ctrl ditekan.
+    .alt modifier ini akan bereaksi ketika keyboard Alt ditekan.
+
+
+
+v-bind
+Directive ini berfungsi untuk mem-binding atribut HTML atau komponen agar nilainya terupdate secara
+reactive sesuai dengan datanya, kebalikan dari v-on.
+Contoh:
+  <div id="app">
+    <img v-bind:src="imageSrc">
+  </div>
+    <script>
+    var vm = new Vue({
+    el: '#app',
+    data: {
+          imageSrc: 'logo-vue.png',
+        }
+      })
+      setTimeout(()=>{
+      vm.imageSrc = 'flowers.jpg'
+      },3000);
+    </script>
+
+
+v-model 
+  yang bertugas untuk two way data binding 
+  menggantikan v-bind untuk value den v-on untuk input
+  pada sebuah form 
+  Contoh : pada folder directive
+
+
+
+
+
+
+
+

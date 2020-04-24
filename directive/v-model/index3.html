@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <h3>V-Model menggunakan form input</h3><br>
+      <label for=""> Masukan input : </label>
+      <input type="text" v-model="message">
+      <p> Output : {{message}}</p>
+      <br><hr>
+    <h3>V-Model menggunakan textarea</h3>
+      <label for=""> Masukan input : </label>
+      <textarea cols="30" rows="10" v-model="textarea"></textarea>
+      <p style="white-space: pre-line"> Output : <br> {{ textarea }}</p><br>
+      <br><hr>
+    <h3>V-Model menggunakan form input radio</h3>
+      <input type="radio" v-model="radioButton" value="option1"> Option1 <br>
+      <input type="radio" v-model="radioButton" value="option2"> Option2 <br>
+      <br> <p>Pilihan : {{ radioButton }}</p>
+      <br><hr>
+    <h3>V-Model menggunakan form input checkbox</h3>
+      <label for="">Sepak Bola</label>
+        <input type="checkbox" value="Sepak-Bola" v-model="checkBox">
+        <br>
+      <label for="">Bulu tangkis</label>
+        <input type="checkbox" value="Bulu-Tangkis" v-model="checkBox">
+        <br>
+      <label for="">Footsal</label>
+        <input type="checkbox" value="Footsal" v-model="checkBox">
+        <br>
+      <label for="">Berenang</label>
+        <input type="checkbox" value="Berenang" v-model="checkBox">
+      <br><br>
+      <p> pilihan : </p>
+      <ul>
+        <li v-for="pilihan in checkBox"> {{ pilihan }}</li>
+      </ul>
+      <br><hr>
+      <h3>V-Model menggunakan form input select</h3>
+      <p>Pilih kategory : </p>
+      <select v-model="select">
+        <option value="" disabled>choose</option>
+        <option value="Adidas">Adidas</option>
+        <option value="Nike">Nike</option>
+        <option value="Reebox">Reebox</option>
+        <option value="Compass">Compass</option>
+      </select>
+      <br>
+      <p>Kategory adalah :  {{ select }}</p>
+  </div>
+
+  <script src="../lib/vue.min.js"></script>
+  <script type="text/javascript">
+    var app = new Vue({
+      el:'#app',
+      data: {
+        message: '',
+        textarea: '',
+        radioButton: '',
+        checkBox: [],
+        select: '',
+      }
+    })
+  </script>
+  
+</body>
+</html>

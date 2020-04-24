@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Hello, world!</title>
+    <script src="../lib/vue.js"></script>
+  </head>
+  <body>
+    <!-- ? menampilkan Hello world -->
+    <div id="app">
+      <h3>{{ message }}</h3>
+    </div>
+
+    <!-- ? menggabungkan pesan hello word dengan text statis -->
+    <div id="app2">
+      <h3>Pesan : {{ message }}</h3>
+    </div>
+
+    <!-- ? menampilkan pesan dengan mount point -->
+    <!-- ? menggunakan vm.$mount -->
+    <div id="app3">
+      <h3>Pesan : {{ message }}</h3>
+    </div>
+
+    <script type="text/JavaScript">
+    var vm = new Vue ({
+      el : '#app',
+      data : {
+        message : 'hello World'
+      }
+    })
+
+    var vm2 = new Vue ({
+      el : '#app2',
+      data : {
+        message : 'hello kawan'
+      }
+    })
+
+
+    var vm = new Vue ({
+      data : {
+        message : 'hello World'
+      }
+    })
+    vm.$mount('#app3')
+    </script>
+
+
+    <!-- Optional JavaScript -->
+    
+  </body>
+</html>

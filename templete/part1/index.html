@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../lib/vue.min.js"></script>
+</head>
+<body>
+  <style type="text/css">
+    .title{
+      color: green;
+    }
+  </style>
+  <!-- ? Template  -->
+  <!-- ? memasukan object data kedalam sebuah class element html -->
+    <div id="app">
+      <!-- ? v-bind digunakan untuk memasukan data kedalam class -->
+      <h3 v-bind:class="class_h1"> {{ message }} </h3>
+    </div>
+
+
+    <script type="text/javascript">
+      Vue.config.silent = true
+        var vm = new Vue({
+        el: '#app',
+        data: {
+          message: "Hello world!",
+          class_h1: "title"
+      },
+    })
+    </script>
+  
+</body>
+</html>

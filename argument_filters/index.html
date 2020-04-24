@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="lib/vue.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h1> {{ price | formatCurrency('USD') }} </h1>
+    <h1> {{ price | formatCurrency('IDR') }} </h1>
+  </div>
+
+
+  <script type="text/javascript">
+    var vm = new Vue ({
+      el: '#app',
+      data: {
+        price: 500000,
+      },
+        filters: {
+          formatCurrency (value, currency) {
+              var formatter = new Intl.NumberFormat('id-ID', {
+              style: 'currency',
+              currency: currency,
+              minimumFractionDigits: 2,
+            });
+            return formatter.format(value)
+          }
+        },
+      })
+  </script>
+  
+</body>
+</html>
